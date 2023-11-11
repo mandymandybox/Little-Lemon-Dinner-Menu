@@ -14,6 +14,7 @@
 		38BA64FD2AFE82D000093601 /* Little_Lemon_Dinner_MenuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BA64FC2AFE82D000093601 /* Little_Lemon_Dinner_MenuTests.swift */; };
 		38BA65072AFE82D000093601 /* Little_Lemon_Dinner_MenuUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BA65062AFE82D000093601 /* Little_Lemon_Dinner_MenuUITests.swift */; };
 		38BA65092AFE82D000093601 /* Little_Lemon_Dinner_MenuUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BA65082AFE82D000093601 /* Little_Lemon_Dinner_MenuUITestsLaunchTests.swift */; };
+		38BA65162AFE862300093601 /* MenuItemsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BA65152AFE862300093601 /* MenuItemsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		38BA65022AFE82D000093601 /* Little_Lemon_Dinner_MenuUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Little_Lemon_Dinner_MenuUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		38BA65062AFE82D000093601 /* Little_Lemon_Dinner_MenuUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Little_Lemon_Dinner_MenuUITests.swift; sourceTree = "<group>"; };
 		38BA65082AFE82D000093601 /* Little_Lemon_Dinner_MenuUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Little_Lemon_Dinner_MenuUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		38BA65152AFE862300093601 /* MenuItemsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 			children = (
 				38BA64EB2AFE82CF00093601 /* Little_Lemon_Dinner_MenuApp.swift */,
 				38BA64ED2AFE82CF00093601 /* ContentView.swift */,
+				38BA65152AFE862300093601 /* MenuItemsView.swift */,
 				38BA64EF2AFE82D000093601 /* Assets.xcassets */,
 				38BA64F12AFE82D000093601 /* Preview Content */,
 			);
@@ -258,6 +261,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				38BA64EE2AFE82CF00093601 /* ContentView.swift in Sources */,
+				38BA65162AFE862300093601 /* MenuItemsView.swift in Sources */,
 				38BA64EC2AFE82CF00093601 /* Little_Lemon_Dinner_MenuApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

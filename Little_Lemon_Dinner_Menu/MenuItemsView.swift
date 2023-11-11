@@ -9,6 +9,8 @@ import SwiftUI
 
 struct MenuItemsView: View {
     
+    @State private var showingPopover = false
+    
     let columns = [
         GridItem(.flexible(minimum: 70, maximum: 100)),
         GridItem(.flexible(minimum: 70, maximum: 100)),
@@ -27,10 +29,13 @@ struct MenuItemsView: View {
                         .padding(.leading)
                     
                     LazyVGrid(columns: columns) {
-                        ForEach(0..<30) {
-                            i in Text("Food \(i)")
+                        ForEach(0..<3) {
+                            i in Image("Food_\(i+1)")
+                                .resizable()
+                                .scaledToFit()
                                 .frame(maxWidth: .infinity, maxHeight: .infinity)
-                                .background(.yellow)
+
+                                .background(.white)
                         }
                     }
                     
@@ -58,7 +63,7 @@ struct MenuItemsView: View {
                         ForEach(0..<30) {
                             i in Text("Dessert \(i)")
                                 .frame(maxWidth: .infinity, maxHeight: .infinity)
-                                .background(.yellow)
+                                .background(.green)
                         }
                     }
                     
@@ -70,10 +75,14 @@ struct MenuItemsView: View {
             .toolbar {
                 ToolbarItem {
                     Button {
-                        
+                        showingPopover = true
                     } label: {
                         Image(systemName: "pencil")
                     }
+                    .popover(isPresented: $showingPopover) {
+                        MenultemsOptionView()
+                            }
+                    
                 }
             }
         }

@@ -12,3 +12,5 @@ enum MenuCategory: String {
     case Drink = "Drink"
     case Dessert = "Dessert"
 }
+
+//how to loop through all items in enum and display in filter list

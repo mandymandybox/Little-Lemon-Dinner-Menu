@@ -10,6 +10,7 @@ import SwiftUI
 struct MenuItemsView: View {
     
     @State private var showingPopover = false
+    @EnvironmentObject var model: MenuViewViewModel
     
     let columns = [
         GridItem(.flexible(minimum: 70, maximum: 100)),
@@ -29,13 +30,20 @@ struct MenuItemsView: View {
                         .padding(.leading)
                     
                     LazyVGrid(columns: columns) {
-                        ForEach(0..<3) {
-                            i in Image("Food_\(i+1)")
-                                .resizable()
-                                .scaledToFit()
-                                .frame(maxWidth: .infinity, maxHeight: .infinity)
-
-                                .background(.white)
+                        ForEach(model.foods) {
+                                food in
+                            NavigationLink() {
+                                MenultemDetailsView(food)
+                                } label: {
+                                    VStack() {
+                                        Image(food.title)
+                                        .resizable()
+                                        .scaledToFit()
+                                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                                        .background(.white)
+                                        Text(food.title)
+                                }
+                            }
                         }
                     }
                     
@@ -46,10 +54,20 @@ struct MenuItemsView: View {
                         .padding(.leading)
                     
                     LazyVGrid(columns: columns) {
-                        ForEach(0..<30) {
-                            i in Text("Drink \(i)")
-                                .frame(maxWidth: .infinity, maxHeight: .infinity)
-                                .background(.yellow)
+                        ForEach(model.drinks) {
+                            drink in
+                        NavigationLink() {
+                            MenultemDetailsView(drink)
+                            } label: {
+                                VStack() {
+                                    Image(drink.title)
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                                    .background(.white)
+                                    Text(drink.title)
+                            }
+                        }
                         }
                     }
                     
@@ -60,10 +78,20 @@ struct MenuItemsView: View {
                         .padding(.leading)
                     
                     LazyVGrid(columns: columns) {
-                        ForEach(0..<30) {
-                            i in Text("Dessert \(i)")
-                                .frame(maxWidth: .infinity, maxHeight: .infinity)
-                                .background(.green)
+                        ForEach(model.desserts) {
+                            dessert in
+                        NavigationLink() {
+                            MenultemDetailsView(dessert)
+                            } label: {
+                                VStack() {
+                                    Image(dessert.title)
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                                    .background(.white)
+                                    Text(dessert.title)
+                            }
+                        }
                         }
                     }
                     
@@ -91,6 +119,6 @@ struct MenuItemsView: View {
 
 struct MenuItemsView_Previews: PreviewProvider {
     static var previews: some View {
-        MenuItemsView()
+        MenuItemsView().environmentObject(MenuViewViewModel())
     }
 }

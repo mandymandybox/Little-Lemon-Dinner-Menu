@@ -7,13 +7,7 @@
 
 import Foundation
 
-struct MenuItem: Identifiable {
-    let id = UUID()
-    let title: String
-    let ingredient: Ingredient
-}
-
-protocol MenuItemP {
+protocol MenuItemProtocol {
     var id: UUID { get }
     var price: Double { get }
     var title: String { get }
@@ -23,3 +17,16 @@ protocol MenuItemP {
     var ingredient: [Ingredient] { get set }
     
 }
+
+struct MenuItem: Identifiable, MenuItemProtocol {
+    var id = UUID()
+    var price: Double
+    var title: String
+    var menuCategory: MenuCategory
+    var orderCounts: Int
+    var priceInt: Int
+    var ingredient: [Ingredient]
+    
+}
+
+

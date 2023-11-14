@@ -7,10 +7,9 @@
 
 import Foundation
 
-enum MenuCategory: String {
+enum MenuCategory: String, CaseIterable {
     case Food = "Food"
     case Drink = "Drink"
     case Dessert = "Dessert"
 }
-
 //how to loop through all items in enum and display in filter list

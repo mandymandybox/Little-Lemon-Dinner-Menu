@@ -12,8 +12,7 @@ struct Little_Lemon_Dinner_MenuApp: App {
     var body: some Scene {
         WindowGroup {
             //ContentView()
-            MenuItemsView()
-            //MenultemsOptionView()
+            MenuItemsView().environmentObject(MenuViewViewModel())
         }
     }
 }

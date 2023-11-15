@@ -108,7 +108,7 @@ struct MenuItemsView: View {
                         Image(systemName: "pencil")
                     }
                     .popover(isPresented: $showingPopover) {
-                        MenultemsOptionView()
+                        MenultemsOptionView(show: $showingPopover)
                             }
                     
                 }

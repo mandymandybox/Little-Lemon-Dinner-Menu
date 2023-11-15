@@ -15,6 +15,8 @@ enum sortBy: String {
 
 struct MenultemsOptionView: View {
     
+    @Binding var show:Bool
+    
     var body: some View {
         NavigationView {
             Form {
@@ -36,21 +38,21 @@ struct MenultemsOptionView: View {
             .navigationTitle("Filter")
             .toolbar {
                 ToolbarItem {
-                    Button {
-                        
-                    } label: {
+                    Button (action: {
+                        show = false
+                    }, label: {
                         Text("Done")
                             .fontWeight(.bold)
-                    }
+                    })
                 }
             }
         }
     }
 }
 
-struct MenultemsOptionView_Previews: PreviewProvider {
-    @Binding var showing: Bool
-    static var previews: some View {
-        MenultemsOptionView()
-    }
-}
+//How to preview???
+//struct MenultemsOptionView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        MenultemsOptionView()
+//    }
+//}
